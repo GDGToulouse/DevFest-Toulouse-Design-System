@@ -4,9 +4,14 @@ Reference mockups showing the design system in use. Useful as **visual context f
 
 ## Status
 
-✅ **Populated** with the 12 desktop mockups of the DevFest Toulouse 2026 site, exported from Figma as SVG and migrated from `Site-Devfest-Toulouse-2026/docs/maquettes/`.
+✅ **Populated**:
+- [`site-2026/`](site-2026/) — 12 desktop mockups exported from the Figma site (snapshot)
+- [`preview/`](preview/) — 22 Stitch-style preview cards (one HTML per design aspect)
+- [`ui-kit-site/`](ui-kit-site/) — working HTML prototype of the marketing site, single page
 
-> 💡 The `home.svg` file is heavy (~29 MB) because it embeds raster PNG illustrations directly. A future optimization is to swap embedded PNGs for `<image>` references to [`../assets/illustrations/`](../assets/illustrations/) (which would shrink it to a few hundred KB).
+> ⚠️ **`site-2026/` mockups still show the 2025 sponsor color model** (Gold yellow `#FFD428`, Silver/Other pink `#EE7CAD`). The 2026 4-pack model (Platinum Malachite / Gold Orange / Discovery Purple / Soutien Gray) is the canonical reference — see [`../DESIGN.md`](../DESIGN.md) and [`../brand/colors.md`](../brand/colors.md). Re-export from Figma when the Figma file is updated.
+
+> 💡 `home.svg` is heavy (~29 MB) because it embeds raster PNG illustrations. A future optimization is to swap embedded PNGs for `<image>` references to [`../assets/illustrations/`](../assets/illustrations/).
 
 ## Content
 

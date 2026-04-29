@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sponsor tiers 2026</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  @page { size: A4 landscape; margin: 1.5cm; }
+  html, body { background: #fff; }
+  body { padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card { width: 100%; max-width: none; }
+  .swatch .chip { box-shadow: inset 0 0 0 1px rgba(29,29,27,0.12); }
+  @media print {
+    .card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body><div class="card">
+  <div style="font:var(--type-caption); color:var(--gray); letter-spacing:.4px; text-transform:uppercase; margin-bottom:14px;">DevFest Toulouse 2026 · 4 packs · couleur figée par tier</div>
+  <div class="row" style="margin-bottom:16px;">
+    <div class="swatch" style="flex:1"><div class="chip" style="background:#109E6E"></div><div class="name">Platinum</div><div class="hex">#109E6E · 4 max · 8 000 €</div></div>
+    <div class="swatch" style="flex:1"><div class="chip" style="background:#FFAB40"></div><div class="name">Gold</div><div class="hex">#FFAB40 · 20 max · 4 000 €</div></div>
+    <div class="swatch" style="flex:1"><div class="chip" style="background:#7E60C9"></div><div class="name">Discovery</div><div class="hex">#7E60C9 · 8 max · 1 200 €</div></div>
+    <div class="swatch" style="flex:1"><div class="chip" style="background:#CCCCCC"></div><div class="name">Soutien</div><div class="hex">#CCCCCC · N/A · 500 €</div></div>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:6px; align-items:flex-start;">
+    <span style="background:#109E6E; color:#fff; padding:8px 18px; font:700 36px/1.0 var(--font-sans); letter-spacing:.5px;">PLATINUM</span>
+    <span style="background:#FFAB40; color:#fff; padding:6px 14px; font:700 26px/1.0 var(--font-sans); letter-spacing:.5px;">GOLD</span>
+    <span style="background:#7E60C9; color:#fff; padding:5px 12px; font:700 20px/1.0 var(--font-sans); letter-spacing:.5px;">DISCOVERY</span>
+    <span style="background:#CCCCCC; color:#fff; padding:4px 10px; font:700 16px/1.0 var(--font-sans); letter-spacing:.5px;">SOUTIEN</span>
+  </div>
+  <div style="font:var(--type-small); color:var(--gray-light); margin-top:14px;">Type des bandeaux : libellé en majuscules, blanc sur la couleur du tier. La taille décroît avec le tier (Platinum &gt; Gold &gt; Discovery &gt; Soutien).</div>
+</div>
+<script>
+(async () => {
+  if (document.fonts && document.fonts.ready) { await document.fonts.ready; }
+  setTimeout(() => window.print(), 500);
+})();
+</script>
+</body></html>

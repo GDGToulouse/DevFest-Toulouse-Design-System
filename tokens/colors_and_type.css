@@ -1,0 +1,196 @@
+/* DevFest Toulouse — Colors & Typography Tokens
+   Source of truth: ../DESIGN.md (Stitch alpha format).
+   This file consolidates the YAML token block as CSS custom properties
+   for direct consumption by HTML pages, prototypes and the UI kit.
+
+   Font loading: by default the brand loads Google Sans from the Google
+   Fonts CDN (recommended). The @font-face block below is an opt-in
+   fallback for self-hosted builds — its `src` paths point to
+   ../assets/fonts/ which ships the .ttf files (Regular, Italic, Medium,
+   MediumItalic, Bold, BoldItalic). Comment-out the block if you load
+   the family from the CDN to avoid a double registration.
+   ------------------------------------------------------------------ */
+
+/* Google Sans (formerly Product Sans) — self-hosted fallback */
+@font-face {
+  font-family: 'Google Sans';
+  src: url('../assets/fonts/GoogleSans-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('../assets/fonts/GoogleSans-Italic.ttf') format('truetype');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('../assets/fonts/GoogleSans-Medium.ttf') format('truetype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('../assets/fonts/GoogleSans-MediumItalic.ttf') format('truetype');
+  font-weight: 500; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('../assets/fonts/GoogleSans-Bold.ttf') format('truetype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('../assets/fonts/GoogleSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+
+:root {
+  /* ─── IDENTITY · Toulouse (warm) ─────────────────────────────── */
+  --bismarck:        #B94420;  /* warm dark — author links, contrasted accent */
+  --terracotta:      #EC6839;  /* identity — "Toulouse" wordmark, hover, CTA accent */
+  --incarnadin:      #F4A598;  /* warm light surface */
+
+  /* ─── IDENTITY · DevFest (fresh) ─────────────────────────────── */
+  --malachite:       #109E6E;  /* identity — "DevFest" wordmark, footer */
+  --emerald:         #41B38E;  /* accent green — historical Platinum, still in palette */
+  --mint:            #8BCBB7;  /* light green accent */
+  --water:           #C0E1D7;  /* very light green surface */
+
+  /* ─── ACTION · functional, not identity ──────────────────────── */
+  --blue:            #507BBD;  /* primary CTA background */
+  --sky:             #63C6F2;
+  --sky-soft:        #C4E6F1;
+
+  /* ─── GOOGLE PALETTE · accents ───────────────────────────────── */
+  --google-green:    #31A853;
+  --google-green-2:  #72BA69;
+  --google-green-3:  #CDE3C0;
+  --google-orange:   #F8AB06;
+
+  /* ─── SPONSOR TIERS · DevFest Toulouse 2026 (4 packs) ─────────
+     Source: dossier sponsoring 2026 (slide « 4 différents packages »).
+     Banner colors are FIXED per tier — do not substitute.        */
+  --tier-platinum:      #109E6E;  /* Platinum (4 max, 8 000 € HT) — Malachite */
+  --tier-platinum-soft: #C0E1D7;
+  --tier-gold:          #FFAB40;  /* Gold (20 max, 4 000 € HT) — warm orange-yellow */
+  --tier-gold-soft:     #FFE0B8;
+  --tier-discovery:     #7E60C9;  /* Discovery (8 max, 1 200 € HT) — saturated purple */
+  --tier-discovery-soft:#D5C7ED;
+  --tier-soutien:       #CCCCCC;  /* Soutien (N/A, 500 € HT) — neutral light gray */
+  --tier-soutien-soft:  #E5E5E5;
+
+  /* Legacy aliases — keep older code working */
+  --gold:            var(--tier-gold);
+  --gold-soft:       var(--tier-gold-soft);
+  --pink:            var(--tier-discovery);
+  --pink-soft:       var(--tier-discovery-soft);
+
+  --red:             #E84336;  /* errors, alerts */
+
+  /* ─── NEUTRALS ───────────────────────────────────────────────── */
+  --ink:             #1D1D1B;  /* body text, headings */
+  --gray:            #777776;  /* nav text */
+  --gray-light:      #8E8E8D;  /* secondary (dates, mentions) */
+  --gray-placeholder:#808080;
+  --white:           #FFFFFF;
+  --off-white:       #FDF0EB;  /* link text on green footer */
+
+  /* ─── SEMANTIC ROLES ─────────────────────────────────────────── */
+  --primary:        var(--blue);
+  --on-primary:     var(--white);
+  --secondary:      var(--terracotta);
+  --on-secondary:   var(--white);
+  --tertiary:       var(--malachite);
+  --on-tertiary:    var(--white);
+  --surface:        var(--white);
+  --on-surface:     var(--ink);
+  --surface-muted:  var(--off-white);
+  --error:          var(--red);
+  --on-error:       var(--white);
+  --link:           var(--bismarck);
+  --link-on-dark:   var(--off-white);
+
+  /* ─── TYPOGRAPHY · families ──────────────────────────────────── */
+  --font-sans: 'Google Sans', 'Product Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  /* CCSignLanguage is print/social only — never used on the web */
+
+  /* ─── TYPOGRAPHY · scale (DESIGN.md tokens) ──────────────────── */
+  --type-display:        700 112px/1.0 var(--font-sans);
+  --type-h1:             700 64px/1.2 var(--font-sans);
+  --type-h2:             700 48px/1.2 var(--font-sans);
+  --type-h3:             700 40px/1.2 var(--font-sans);
+  --type-h4:             700 36px/1.2 var(--font-sans);
+  --type-description:    400 32px/1.4 var(--font-sans);
+  --type-description-bold:700 32px/1.4 var(--font-sans);
+  --type-card-title-l:   700 40px/1.2 var(--font-sans);
+  --type-card-title-m:   700 32px/1.2 var(--font-sans);
+  --type-card-title-s:   700 24px/1.1 var(--font-sans);
+  --type-stat-value:     700 64px/1.4 var(--font-sans);
+  --type-stat-label:     400 24px/1.2 var(--font-sans);
+  --type-body:           400 16px/1.6 var(--font-sans);
+  --type-body-bold:      700 16px/1.0 var(--font-sans);
+  --type-caption:        700 12px/1.2 var(--font-sans);
+  --type-small:          400 10px/1.2 var(--font-sans);
+
+  /* ─── SPACING · 4-px-rooted ──────────────────────────────────── */
+  --space-xs:  4px;
+  --space-s:   8px;
+  --space-m:   12px;
+  --space-l:   16px;
+  --space-xl:  24px;
+  --space-2xl: 32px;
+  --space-3xl: 48px;
+  --space-4xl: 64px;
+  --space-5xl: 80px;
+
+  /* ─── RADII · roundedness-forward ────────────────────────────── */
+  --radius-s:    12px;
+  --radius-m:    16px;
+  --radius-l:    18px;
+  --radius-xl:   20px;
+  --radius-2xl:  24px;
+  --radius-3xl:  32px;
+  --radius-4xl:  40px;
+  --radius-5xl:  56px;
+  --radius-hero: 64px;
+
+  /* ─── SHADOWS · always cast in ink, never colored ────────────── */
+  --shadow-header:  0 4px 12px rgba(29,29,27,0.10);
+  --shadow-card:    0 12px 16px 4px rgba(29,29,27,0.14);
+  --shadow-section: 0 4px 64px 4px rgba(29,29,27,0.12);
+
+  /* ─── MOTION · same easing across the brand ──────────────────────
+     Use these tokens for every transition / animation. No bounce, no
+     spring. Honor `prefers-reduced-motion: reduce` at the consumer
+     level (set --duration-* to 0 in that media query).             */
+  --ease-default:    cubic-bezier(0.2, 0.6, 0.2, 1);
+  --duration-fast:   150ms;   /* hovers, button color shifts */
+  --duration-base:   200ms;   /* card lifts, footer link underlines */
+  --duration-slow:   400ms;   /* section reveals, only when justified */
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   Semantic typography classes
+   ─────────────────────────────────────────────────────────────── */
+html, body { font: var(--type-body); color: var(--on-surface); background: var(--surface); }
+body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+
+.t-display     { font: var(--type-display); }
+.t-h1, h1      { font: var(--type-h1); margin: 0; }
+.t-h2, h2      { font: var(--type-h2); margin: 0; }
+.t-h3, h3      { font: var(--type-h3); margin: 0; }
+.t-h4, h4      { font: var(--type-h4); margin: 0; }
+.t-description { font: var(--type-description); }
+.t-description-bold { font: var(--type-description-bold); }
+.t-card-title-l { font: var(--type-card-title-l); }
+.t-card-title-m { font: var(--type-card-title-m); }
+.t-card-title-s { font: var(--type-card-title-s); }
+.t-stat-value  { font: var(--type-stat-value); }
+.t-stat-label  { font: var(--type-stat-label); }
+.t-body, p     { font: var(--type-body); }
+.t-body-bold   { font: var(--type-body-bold); }
+.t-caption     { font: var(--type-caption); letter-spacing: 0.4px; text-transform: none; }
+.t-small       { font: var(--type-small); color: var(--gray-light); }
+
+/* Identity wordmark colors — strict pairing */
+.wordmark-toulouse { color: var(--terracotta); }
+.wordmark-devfest  { color: var(--malachite); }

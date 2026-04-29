@@ -13,7 +13,7 @@ colors:
   terracotta:      "#EC6839"   # identity — "Toulouse" wordmark, H1 accent, CTA hover
   incarnadin:      "#F4A598"   # warm light accent
   malachite:       "#109E6E"   # identity — "DevFest" wordmark, footer, accented headings
-  emerald:         "#41B38E"   # platinum sponsor banner
+  emerald:         "#41B38E"   # accent green — historical Platinum tier color, still in palette
   mint:            "#8BCBB7"   # light green accent
   water:           "#C0E1D7"   # very light green surface
 
@@ -25,11 +25,19 @@ colors:
   google-green-2:  "#72BA69"
   google-green-3:  "#CDE3C0"
   google-orange:   "#F8AB06"
-  gold:            "#FFD428"   # gold sponsor banner
-  gold-soft:       "#FFE8A5"
   red:             "#E84336"   # errors, alerts
-  pink:            "#EE7CAD"   # silver / other sponsor banner
-  pink-soft:       "#F8D8D8"
+
+  # --- Sponsor tier colors (DevFest Toulouse 2026 — 4-pack model) ---
+  # Source: Dossier_Sponsoring_2026.pdf. Banner color is FIXED per tier;
+  # banners are always uppercase white text on the tier color.
+  tier-platinum:        "#109E6E"   # Platinum (4 max, 8 000 € HT, 12 m²) — Malachite
+  tier-platinum-soft:   "#C0E1D7"
+  tier-gold:            "#FFAB40"   # Gold (20 max, 4 000 € HT, 6 m²) — warm orange
+  tier-gold-soft:       "#FFE0B8"
+  tier-discovery:       "#7E60C9"   # Discovery (8 max, 1 200 € HT, 2 m² corner) — saturated purple
+  tier-discovery-soft:  "#D5C7ED"
+  tier-soutien:         "#CCCCCC"   # Soutien (∞, 500 € HT, no stand) — neutral light gray
+  tier-soutien-soft:    "#E5E5E5"
 
   # --- Neutrals ---
   ink:             "#1D1D1B"   # body text, headings
@@ -55,8 +63,11 @@ colors:
   link-on-dark:    "{colors.off-white}"
 
 typography:
-  # All weights of Google Sans (formerly Product Sans), released under SIL OFL
-  # in November 2025. https://fonts.google.com/specimen/Google+Sans
+  # Google Sans (formerly Product Sans), released under SIL OFL in November
+  # 2025. https://fonts.google.com/specimen/Google+Sans
+  # Weights bundled / loaded: 400 (Regular), 500 (Medium), 700 (Bold), each
+  # with an italic. Default loading is via Google Fonts CDN; .ttf files in
+  # /assets/fonts/ enable self-hosted fallback (see /tokens/colors_and_type.css).
   display:
     fontFamily: "Google Sans"
     fontSize: 112px
@@ -121,6 +132,11 @@ typography:
     fontFamily: "Google Sans"
     fontSize: 16px
     fontWeight: 400
+    lineHeight: 1.6
+  body-medium:
+    fontFamily: "Google Sans"
+    fontSize: 16px
+    fontWeight: 500
     lineHeight: 1.6
   body-bold:
     fontFamily: "Google Sans"
@@ -209,6 +225,18 @@ components:
     rounded:         "{rounded.m}"
     width:           340px
     height:          240px
+  card-sponsor-discovery:
+    backgroundColor: "{colors.surface}"
+    textColor:       "{colors.on-surface}"
+    rounded:         "{rounded.m}"
+    width:           340px
+    height:          240px
+  card-sponsor-soutien:
+    backgroundColor: "{colors.surface}"
+    textColor:       "{colors.on-surface}"
+    rounded:         "{rounded.m}"
+    width:           340px
+    height:          120px
 
   # --- Layout ---
   header:
@@ -245,8 +273,22 @@ The palette is built around two identity colors and their semantic roles.
 - **Terracotta `#EC6839`** carries the "Toulouse" wordmark and the warmth of the city's brick. Use it for identity moments, accents, and CTA hover states.
 - **Malachite `#109E6E`** carries the "DevFest" wordmark and the footer. Use it as the calm anchor of a page and for accented headings.
 - **Blue `#507BBD`** is the **primary CTA color** — buttons that drive action ("Become a partner", "Submit a talk"). It is *not* an identity color; it is a functional one.
-- Sponsor tiers each have a dedicated color band: **emerald** (Platinum), **gold** (Gold), **pink** (Silver / other).
 - Neutrals: ink `#1D1D1B` for body text, off-white `#FDF0EB` for muted text on the green footer.
+
+### Sponsor tiers (DevFest Toulouse 2026 — 4-pack model)
+
+Source: `Dossier_Sponsoring_2026.pdf` (held by the organizing team). Four packs, each with a fixed banner color. Banners are **uppercase white labels on the tier color**.
+
+| Pack | Token | Hex | Quota | Tarif | Stand |
+|------|-------|-----|-------|-------|-------|
+| **Platinum** | `tier-platinum` (= `malachite`) | `#109E6E` | 4 max | 8 000 € HT | 12 m² |
+| **Gold** | `tier-gold` | `#FFAB40` | 20 max | 4 000 € HT | 6 m² |
+| **Discovery** | `tier-discovery` | `#7E60C9` | 8 max | 1 200 € HT | 2 m² (corner) |
+| **Soutien** | `tier-soutien` | `#CCCCCC` | ∞ | 500 € HT | none |
+
+> **Discovery** is reserved for *new sponsors, startups, very small businesses, and associations* — not a generic "discount" tier. Communicate that in copy when introducing it.
+
+Note that **Platinum re-uses the same hex as the Malachite identity color**. This is intentional: Platinum sponsors deserve the brand's calm anchor color. It does not violate the "Malachite = DevFest wordmark" rule because the banner is a contextual color band, not the wordmark.
 
 Contrast: all text-on-surface and on-primary pairings target WCAG AA (4.5:1). Run `lint` before publishing changes.
 
@@ -254,9 +296,12 @@ Contrast: all text-on-surface and on-primary pairings target WCAG AA (4.5:1). Ru
 
 **Google Sans** (formerly Product Sans, released under SIL OFL in November 2025) is the single typeface. It carries the DevFest logo and every screen of the site.
 
-- **Bold** — headings, buttons, statistic numbers, names.
-- **Regular** — body, descriptions, navigation, labels.
-- **Italic** — sponsor baselines (Platinum tier only).
+- **Bold (700)** — headings, buttons, statistic numbers, names.
+- **Medium (500)** — intermediate emphasis: in-line stress within a paragraph, secondary labels, button labels in dense areas.
+- **Regular (400)** — body, descriptions, navigation, labels.
+- **Italic (400, 500, or 700)** — sponsor baselines (Platinum tier only). Never use italic for emphasis in body copy — use Bold instead.
+
+Loading: Google Fonts CDN by default. The `assets/fonts/` directory ships `.ttf` files (Regular, Italic, Medium, MediumItalic, Bold, BoldItalic) for self-hosted builds; the `@font-face` block in `tokens/colors_and_type.css` wires them up.
 
 A secondary handwritten typeface, **CCSignLanguage**, is used *only* on print and social-media communications — never on the web.
 
@@ -274,6 +319,19 @@ Header (60 px, fixed)
       └── Content
           └── Footer (~496 px, malachite background, rounded-3xl)
 ```
+
+### Motion
+
+A single timing function and a small set of durations cover every transition in the brand. No bounce, no spring.
+
+| Token | Value | Use |
+|-------|-------|-----|
+| `ease-default` | `cubic-bezier(0.2, 0.6, 0.2, 1)` | Every transition / animation, no exception |
+| `duration-fast` | `150ms` | Hover color shifts, button state changes |
+| `duration-base` | `200ms` | Card lifts, footer link underlines, focus rings |
+| `duration-slow` | `400ms` | Section reveals — only when justified by content density |
+
+Honor `prefers-reduced-motion: reduce` at the consumer level (set durations to `0ms` in that media query). CSS variables are exported in [`tokens/colors_and_type.css`](tokens/colors_and_type.css).
 
 ## Elevation & Depth
 
@@ -299,6 +357,21 @@ Components are typed at three sizes: **Small** (header, footer, dense areas), **
 
 Variants of the same component (e.g. `button-primary` and `button-primary-hover`) are expressed as separate component entries with related key names, per the Stitch spec.
 
+### Sponsor cards
+
+The 4 sponsor tiers map to 4 component entries. By default, all banners are the **same size** — the tier is signaled by the banner color (see Colors § Sponsor tiers), not by the banner geometry.
+
+When a section needs extra visual hierarchy between tiers (e.g. a single page that lists all 4 packs side by side), the banners may *opt in* to a decreasing size, expressing the hierarchy typographically:
+
+| Tier | Banner label size | Banner padding |
+|------|--------------------|----------------|
+| Platinum | 36 px Bold | 8 px / 18 px |
+| Gold | 26 px Bold | 6 px / 14 px |
+| Discovery | 20 px Bold | 5 px / 12 px |
+| Soutien | 16 px Bold | 4 px / 10 px |
+
+Only deviate from the default uniform size when the visual gain is real (the same row mixes 4 tiers in a comparison context). Otherwise keep banners uniform across grids dedicated to a single tier.
+
 For the full per-component spec (anatomy, states, do/don't), see [`components/`](components/).
 
 ## Do's and Don'ts
@@ -318,3 +391,5 @@ For the full per-component spec (anatomy, states, do/don't), see [`components/`]
 - Don't use CCSignLanguage on the web — it lives on print and social only.
 - Don't introduce a new color without adding it here first; ad-hoc hexes will be flagged by `lint`.
 - Don't use 0-radius rectangles for interactive elements; use `rounded.s` minimum.
+- Don't reuse a sponsor tier color outside its tier (e.g. Discovery purple as a generic accent). Sponsor tier colors are signals, not part of the general palette.
+- Don't bounce or spring transitions. The brand uses a single easing curve — see Layout § Motion.

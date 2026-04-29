@@ -78,7 +78,7 @@ The footer is the **emotional sign-off** of every page. It is the only large mal
 |---------|-------|--------|
 | Footer link | hover | underline appears, color stays off-white |
 | Footer link | focus (keyboard) | 2 px terracotta outline, offset 2 px |
-| Social icon | hover | scale 1.1, transition 120 ms |
+| Social icon | hover | scale 1.1, transition `var(--duration-fast) var(--ease-default)` (150 ms) |
 | CTA | as `button-primary` (small) | see [button.md](button.md) |
 | Tagline-bar link | hover | underline, color stays ink |
 

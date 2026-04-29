@@ -2,7 +2,7 @@
 
 Token group: `components.card-sponsor-platinum` in [`../DESIGN.md`](../DESIGN.md).
 
-The Platinum card is the largest sponsor surface. It exists because Platinum sponsors deserve more space than Gold/Silver — both vertically (room for a baseline) and visually (a saturated emerald banner on top).
+The Platinum card is the largest sponsor surface. It exists because Platinum sponsors deserve more space than Gold / Discovery / Soutien — both vertically (room for a baseline) and visually (a deep malachite banner on top, the brand's anchor color).
 
 There is **one Platinum card** size; do not introduce variants. The brand's clarity comes from the strict tier-to-component mapping.
 
@@ -10,7 +10,7 @@ There is **one Platinum card** size; do not introduce variants. The brand's clar
 
 ```
 ┌─────────────────────────────────────────┐  ← width 340, height 481
-│ ████████████████████████████████████████│  ← top banner: 24 px, emerald
+│ ████████████████████████████████████████│  ← top banner: 24 px, malachite
 ├─────────────────────────────────────────┤
 │                                         │
 │        ┌─────────────────────┐          │
@@ -46,9 +46,13 @@ There is **one Platinum card** size; do not introduce variants. The brand's clar
 | Property | Token | Value |
 |----------|-------|-------|
 | height | — | `24px` |
-| backgroundColor | `{colors.emerald}` | `#41B38E` |
+| backgroundColor | `{colors.tier-platinum}` (= `{colors.malachite}`) | `#109E6E` |
+| label color | `{colors.on-tertiary}` (white) | `#FFFFFF` |
+| label typography | `{typography.heading-4}` Bold (or 36 px Bold for the "decreasing-size" option) | — |
 
-The banner color is **fixed** to emerald for Platinum. It is the brand's sponsor-tier signal — never change it on a per-sponsor basis.
+The banner color is **fixed** to malachite for Platinum (per the 2026 sponsoring dossier). It is the brand's sponsor-tier signal — never change it on a per-sponsor basis.
+
+Note: this is the same hex as the *DevFest* wordmark color. That's intentional — Platinum gets the brand's anchor color. The wordmark/banner duality does not create confusion in practice because the banner sits on a card next to the sponsor's logo, not next to the word "DevFest".
 
 ### Logo zone
 
@@ -90,7 +94,7 @@ The Italic font weight is reserved for this exact use case.
 | State | Visual |
 |-------|--------|
 | **Default** | as drawn |
-| **Hover** (whole card is a link to sponsor detail) | shadow deepens (`y: 16, blur: 24, alpha: 0.18`), translate `-2px`, transition 160 ms |
+| **Hover** (whole card is a link to sponsor detail) | shadow deepens (`y: 16, blur: 24, alpha: 0.18`), translate `-2px`, transition `var(--duration-base) var(--ease-default)` (200 ms) |
 | **Focus (keyboard)** | 3 px terracotta outline, offset 4 px |
 | **Logo broken / missing** | placeholder logo block: gray fill `{colors.gray-light}` at 10 % opacity, centered Font Awesome `fa-image` icon |
 

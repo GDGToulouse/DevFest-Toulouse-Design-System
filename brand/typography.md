@@ -15,24 +15,38 @@
 | Variante | Usage |
 |----------|-------|
 | **Bold (700)** | Titres, boutons, chiffres clés, noms |
+| **Medium (500)** | Emphase intermédiaire dans un paragraphe, labels secondaires, boutons en zones denses |
 | **Regular (400)** | Corps de texte, descriptions, navigation, labels |
-| **Italic (400)** | **Uniquement** baselines de sponsors Platinum |
+| **Italic (400/500/700)** | **Uniquement** baselines de sponsors Platinum |
 
-> ⚠️ Italic Regular n'est *pas* utilisé pour de l'emphase dans le corps de texte. Pour appuyer un mot, on utilise **Bold**.
+> ⚠️ Italic n'est *pas* utilisé pour de l'emphase dans le corps de texte. Pour appuyer un mot, on utilise **Bold** ou **Medium** (Medium si Bold est trop fort dans le contexte).
 
-### Chargement web
+### Chargement web — recommandation
+
+**Par défaut : CDN Google Fonts.** Plus simple, mises à jour automatiques, cache CDN partagé entre sites.
 
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
 ```
 
 ```css
 font-family: 'Google Sans', system-ui, sans-serif;
 ```
 
-Pour une intégration self-hosted, les fichiers `.woff2` sont disponibles dans [`../assets/fonts/`](../assets/fonts/) (à ajouter).
+### Chargement web — bascule self-hosted
+
+Si la production a une contrainte (CSP, RGPD strict, fonctionnement offline, perte d'accès au CDN), basculer en self-hosted :
+
+1. Les fichiers `.ttf` sont déjà dans [`../assets/fonts/`](../assets/fonts/) :
+   - `GoogleSans-Regular.ttf`, `GoogleSans-Italic.ttf`
+   - `GoogleSans-Medium.ttf`, `GoogleSans-MediumItalic.ttf`
+   - `GoogleSans-Bold.ttf`, `GoogleSans-BoldItalic.ttf`
+2. Référencer [`../tokens/colors_and_type.css`](../tokens/colors_and_type.css) qui contient déjà les `@font-face` correspondants.
+3. Retirer le `<link>` Google Fonts CDN.
+
+> 💡 Une optimisation possible : convertir les `.ttf` en `.woff2` (~30 % plus léger) et mettre à jour les `@font-face` correspondants. Tâche à planifier si la perf devient un sujet.
 
 ## Police secondaire — CCSignLanguage
 

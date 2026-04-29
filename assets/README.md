@@ -25,10 +25,16 @@ assets/
 │   ├── Bismarck/                    ← 30 PNG (#B94420)
 │   ├── TerreCuite/                  ← 30 PNG (#EC6839)
 │   └── Malachite/                   ← 30 PNG (#109E6E)
-└── fonts/                          ← To be added (Google Sans woff2)
+└── fonts/                          ← Google Sans .ttf (self-hosted fallback)
+    ├── GoogleSans-Regular.ttf
+    ├── GoogleSans-Italic.ttf
+    ├── GoogleSans-Medium.ttf
+    ├── GoogleSans-MediumItalic.ttf
+    ├── GoogleSans-Bold.ttf
+    └── GoogleSans-BoldItalic.ttf
 ```
 
-> ⚠️ **Fonts directory is not yet present.** Google Sans is loaded via the [Google Fonts CDN](https://fonts.google.com/specimen/Google+Sans) for now. Self-hosted `.woff2` files will be added when needed (see [`../brand/typography.md`](../brand/typography.md)).
+> 💡 **Fonts loading strategy.** Default for the brand is the [Google Fonts CDN](https://fonts.google.com/specimen/Google+Sans). The `.ttf` files in [`fonts/`](fonts/) are an **opt-in self-hosted fallback** for builds with CSP / RGPD / offline constraints. The `@font-face` rules wiring them up are in [`../tokens/colors_and_type.css`](../tokens/colors_and_type.css). Conversion to `.woff2` (~30 % smaller) is a planned optimization.
 
 ## Logo declensions
 

@@ -29,13 +29,18 @@ Ce dépôt résout les deux : la **prose** est pour les humains, le **`DESIGN.md
 
 ```
 .
-├── DESIGN.md             ← Spec machine-readable (format Stitch)
-├── brand/                ← Charte de marque (humain, FR)
-├── tokens/               ← Tokens exportables (DTCG, Tailwind, CSS vars)
-├── components/           ← Spécifications composants (HTML/CSS de référence)
-├── assets/               ← Logo, illustrations, polices, charte PDF
-├── examples/             ← Maquettes de référence (site DevFest 2026)
-└── docs/                 ← Guides d'usage (intégration, Claude Design, etc.)
+├── DESIGN.md                ← Spec machine-readable (format Stitch)
+├── brand/                   ← Charte de marque (humain, FR)
+├── tokens/colors_and_type.css ← Tokens en CSS vars + @font-face self-hosted (bascule)
+├── components/              ← Spécifications composants (anatomie, états, HTML/CSS)
+├── assets/                  ← Logo, 90 illustrations, polices TTF, charte PDF
+├── examples/
+│   ├── site-2026/           ← 12 SVG des maquettes Figma du site
+│   ├── preview/             ← Cartes preview style Stitch (1 HTML par aspect)
+│   └── ui-kit-site/         ← Prototype HTML du site (single page)
+├── docs/                    ← Guides d'usage (Claude Design, Tailwind, etc.)
+└── .claude/skills/devfest-toulouse-design/
+                             ← Skill Claude Code invokable pour générer des artefacts
 ```
 
 ## Sources

@@ -44,5 +44,5 @@ Voir aussi [voice-and-tone.md](voice-and-tone.md) pour les conventions rédactio
 
 - **Participants** : devs (toutes séniorités), étudiants, curieux tech du grand sud-ouest
 - **Speakers** : communauté locale + nationale + invités internationaux
-- **Sponsors** : entreprises tech locales et nationales (Platinum, Gold, Silver, autres)
+- **Sponsors** : entreprises tech locales et nationales (modèle 2026 — 4 packs : Platinum, Gold, Discovery, Soutien)
 - **Partenaires** : écosystèmes (ToulouseTech, CloudToulouse), médias, lieux

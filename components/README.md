@@ -24,7 +24,8 @@ Liste issue des maquettes du site DevFest Toulouse 2026. À transformer en fichi
 | Footer | P0 | [`footer.md`](footer.md) | ✅ |
 | Article Card (300×400 px) | P0 | [`card-article.md`](card-article.md) | ✅ |
 | Partner Card Platinum (340×481 px) | P1 | [`card-partner-platinum.md`](card-partner-platinum.md) | ✅ |
-| Partner Card Gold/Other (340×240 px) | P1 | [`card-partner-gold.md`](card-partner-gold.md) | ✅ |
+| Partner Card Medium — Gold + Discovery (340×240 px) | P1 | [`card-partner-medium.md`](card-partner-medium.md) | ✅ |
+| Partner Card Soutien (340×120 px, logo-only) | P1 | [`card-partner-soutien.md`](card-partner-soutien.md) | ✅ |
 | Hero Section | P1 | [`hero.md`](hero.md) | ✅ |
 | Statistics Block | P1 | [`stat-block.md`](stat-block.md) | ✅ |
 | Breadcrumb | P2 | `breadcrumb.md` | ⏳ |

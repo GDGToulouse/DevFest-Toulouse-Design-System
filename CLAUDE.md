@@ -22,13 +22,19 @@ The neighbouring repo `../Site-Devfest-Toulouse-2026/` is the first consumer; it
 
 ```
 .
-├── DESIGN.md             ← Machine-readable spec (Stitch alpha) — single source of truth for tokens
-├── brand/                ← Human-facing brand book (FR)
-├── tokens/               ← Exports of DESIGN.md tokens (DTCG JSON, Tailwind, CSS vars)
-├── components/           ← Per-component specifications (anatomy, states, code refs)
-├── assets/               ← Logo (5 declensions × 5 formats), 30 illustrations × 3 colors, fonts, charte PDF
-├── examples/             ← Reference mockups (Site 2026 SVG exports)
-└── docs/                 ← Integration guides (Claude Design usage, Tailwind setup, etc.)
+├── DESIGN.md                ← Machine-readable spec (Stitch alpha) — single source of truth for tokens
+├── brand/                   ← Human-facing brand book (FR)
+├── tokens/
+│   └── colors_and_type.css  ← Hand-maintained CSS vars + opt-in @font-face (mirrors DESIGN.md)
+├── components/              ← Per-component specifications (anatomy, states, code refs)
+├── assets/                  ← Logo, 90 illustrations (30 × 3 colors), Google Sans .ttf, charte PDF
+├── examples/
+│   ├── site-2026/           ← 12 SVG mockups exported from the Figma site
+│   ├── preview/             ← Stitch-style preview cards (1 HTML per design aspect, share _card.css)
+│   └── ui-kit-site/         ← Working HTML prototype of the marketing site (single index.html)
+├── docs/                    ← Integration guides (Claude Design usage, Tailwind setup, etc.)
+└── .claude/skills/devfest-toulouse-design/SKILL.md
+                             ← Claude Code skill — invokable by users to generate branded artifacts
 ```
 
 **`DESIGN.md` is the single source of truth for tokens.** Files in `tokens/` are *generated* from it (or kept in sync manually until the export pipeline is wired). When palette / typo / spacing changes, edit `DESIGN.md` first, then propagate.
@@ -56,9 +62,12 @@ Until then, hand-edit `DESIGN.md` and keep `tokens/` aligned manually.
 ## Conventions specific to this repo
 
 - **Identity colors are not interchangeable.** "Toulouse" is always terracotta `#EC6839`; "DevFest" is always malachite `#109E6E`; the **primary CTA color** is blue `#507BBD` and is *functional*, not identity. Reject changes that swap these roles.
+- **Sponsor tiers are 2026 4-pack model.** Platinum (Malachite `#109E6E`), Gold (Orange `#FFAB40`), Discovery (Purple `#7E60C9`, reserved for new sponsors / startups / TPE / non-profits), Soutien (Gray `#CCCCCC`, no stand). Banner labels are uppercase white *except* on Gold and Soutien (need ink for WCAG AA).
 - **Do not introduce a new hex value without adding a named token to `DESIGN.md`** — orphan colors will be flagged by `lint` and break downstream exports.
-- **Do not edit files in `tokens/` by hand once the export pipeline is live.** They are derived from `DESIGN.md`.
-- **Brand assets are versioned in this repo** (logo SVG/PNG/EPS, illustrations PNG, charte PDF). They are heavy but the canonical location — do not re-host them in consumer repos.
+- **Tokens flow one way only.** `DESIGN.md` → `tokens/colors_and_type.css` (currently hand-maintained, future automated). Do not edit `tokens/colors_and_type.css` and forget to back-port to `DESIGN.md`.
+- **Motion.** A single easing curve `cubic-bezier(0.2, 0.6, 0.2, 1)` and 3 durations (150 ms / 200 ms / 400 ms) cover every transition. Use `var(--ease-default)` and `var(--duration-*)` from `tokens/colors_and_type.css`. No bounce, no spring.
+- **Fonts.** Google Sans loads from the Google Fonts CDN by default. The `assets/fonts/` `.ttf` files are an **opt-in self-hosted fallback** (CSP / RGPD / offline builds). Weights: 400, 500 (Medium), 700 + italics each.
+- **Brand assets are versioned in this repo** (logo SVG/PNG/EPS, illustrations PNG, charte PDF, font TTFs). They are heavy but the canonical location — do not re-host them in consumer repos.
 - **Illustrations are PNG-only today.** A future task is converting the 90 illustration files (30 × 3 colors) to SVG for web use.
 
 ## Maintenance note for future Claude instances

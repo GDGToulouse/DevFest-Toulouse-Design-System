@@ -69,7 +69,7 @@ Two rows of 4 = 8 articles per page (the home page surfaces 4; the news index su
 | State | Visual |
 |-------|--------|
 | **Default** | as drawn |
-| **Hover** | shadow deepens slightly (`y: 16, blur: 24, alpha: 0.18`), card translates `-2 px` up, transition 160 ms ease |
+| **Hover** | shadow deepens slightly (`y: 16, blur: 24, alpha: 0.18`), card translates `-2 px` up, transition `var(--duration-base) var(--ease-default)` (200 ms) |
 | **Focus (keyboard, whole card is a link)** | 3 px terracotta outline at card border, offset 4 px |
 | **Visited** | no visual change (the brand chooses unread/read parity) |
 | **Pressed** | shadow returns to default, `scale(0.99)` |
@@ -141,7 +141,8 @@ The card is **not** used for sessions or speakers — those have their own compo
   box-shadow: var(--dft-shadow-card);
   text-decoration: none;
   padding: 10px 16px 16px;
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  transition: transform var(--duration-base) var(--ease-default),
+              box-shadow var(--duration-base) var(--ease-default);
 }
 .dft-card-article:hover {
   transform: translateY(-2px);

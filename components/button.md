@@ -127,7 +127,9 @@ Use for: hero CTAs ("Devenir partenaire"), page-level CTAs ("Proposer un talk").
   font-family: "Google Sans", sans-serif;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color 120ms ease, color 120ms ease, transform 80ms ease;
+  transition: background-color var(--duration-fast) var(--ease-default),
+              color            var(--duration-fast) var(--ease-default),
+              transform        var(--duration-fast) var(--ease-default);
   border: 0;
   display: inline-flex;
   align-items: center;

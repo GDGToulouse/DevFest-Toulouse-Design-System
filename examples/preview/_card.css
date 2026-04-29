@@ -1,0 +1,10 @@
+@import url('../../tokens/colors_and_type.css');
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--white); color: var(--ink); }
+body { font-family: var(--font-sans); padding: 24px; }
+.card { width: 100%; }
+.row { display: flex; gap: 12px; align-items: stretch; flex-wrap: wrap; }
+.swatch { display: flex; flex-direction: column; gap: 6px; }
+.swatch .chip { width: 100%; height: 64px; border-radius: 12px; box-shadow: inset 0 0 0 1px rgba(29,29,27,0.06); }
+.swatch .name { font: var(--type-body-bold); font-size: 13px; line-height: 1.2; }
+.swatch .hex { font: var(--type-small); color: var(--gray-light); font-size: 11px; }

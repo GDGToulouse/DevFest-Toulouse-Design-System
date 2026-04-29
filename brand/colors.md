@@ -37,15 +37,20 @@ Le **bleu** porte l'action. Il n'est *pas* une couleur d'identité — c'est une
 - **Bleu `#507BBD`** — fond des CTA principaux, bordure des CTA secondaires.
 - **Bleu 2 `#63C6F2`** / **Bleu 3 `#C4E6F1`** — accents et fonds clairs (rares).
 
-## Sponsors
+## Sponsors — modèle 2026 (4 packs)
 
-Chaque tier de sponsor a son bandeau couleur, intégralement réservé :
+Source : *Dossier de sponsoring 2026* (équipe organisatrice). Chaque pack a un **bandeau couleur figé**. Bandeaux toujours en **majuscules blanches sur la couleur du tier**.
 
-| Tier | Couleur | Hex |
-|------|---------|-----|
-| Platinum | Émeraude | `#41B38E` |
-| Gold | Jaune | `#FFD428` |
-| Silver / autre | Rose | `#EE7CAD` |
+| Pack | Couleur | Hex | Quota | Tarif | Stand |
+|------|---------|-----|-------|-------|-------|
+| **Platinum** | Malachite (= identité DevFest) | `#109E6E` | 4 max | 8 000 € HT | 12 m² |
+| **Gold** | Orange | `#FFAB40` | 20 max | 4 000 € HT | 6 m² |
+| **Discovery** | Violet | `#7E60C9` | 8 max | 1 200 € HT | 2 m² (corner) |
+| **Soutien** | Gris | `#CCCCCC` | sans limite | 500 € HT | aucun (focus visibilité) |
+
+> **Discovery** est explicitement réservé aux **nouveaux sponsors, startups, TPE et associations**. Ce n'est pas un « pack discount » : c'est un pack d'entrée pour des structures qui n'auraient pas accès aux autres tarifs. À communiquer comme tel dans la copy.
+
+> **Platinum réutilise le hex Malachite `#109E6E`** — la même couleur que le mot *DevFest* du wordmark. C'est intentionnel : le pack Platinum mérite la couleur d'ancrage de la marque. Cela ne contredit pas la règle « Malachite = wordmark DevFest » : le bandeau est un signal contextuel, pas le wordmark.
 
 Ne jamais dévier de cette correspondance ; elle est immédiatement lisible par les sponsors récurrents.
 
@@ -85,6 +90,13 @@ Les paires sûres :
 |-------|------|-------|
 | Ink `#1D1D1B` | White `#FFFFFF` | 17.4:1 ✅ |
 | White | Blue CTA `#507BBD` | 4.7:1 ✅ |
-| White | Malachite `#109E6E` | 3.6:1 ⚠️ (texte ≥ 18 px Bold ou ≥ 24 px) |
+| White | Malachite / Tier-Platinum `#109E6E` | 3.6:1 ⚠️ (texte ≥ 18 px Bold ou ≥ 24 px) |
 | White | Terracotta `#EC6839` | 3.4:1 ⚠️ (texte ≥ 18 px Bold ou ≥ 24 px) |
 | White | Bismarck `#B94420` | 5.6:1 ✅ |
+| White | Tier-Gold `#FFAB40` | 2.0:1 ❌ (utiliser **ink** sur ce fond, pas blanc) |
+| White | Tier-Discovery `#7E60C9` | 5.4:1 ✅ |
+| White | Tier-Soutien `#CCCCCC` | 1.6:1 ❌ (utiliser **ink** sur ce fond) |
+| Ink   | Tier-Gold `#FFAB40` | 8.6:1 ✅ |
+| Ink   | Tier-Soutien `#CCCCCC` | 11.0:1 ✅ |
+
+> ⚠️ Pour les tiers **Gold** et **Soutien**, le label du bandeau doit être en **ink** (`#1D1D1B`) plutôt qu'en blanc, sinon le contraste ne passe pas WCAG AA. Pour Platinum et Discovery, blanc reste correct.
