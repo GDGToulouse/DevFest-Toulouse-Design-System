@@ -4,9 +4,11 @@ Reference mockups showing the design system in use. Useful as **visual context f
 
 ## Status
 
-🚧 **Empty for now.** SVG exports will be copied from `../../Site-Devfest-Toulouse-2026/docs/maquettes/`.
+✅ **Populated** with the 12 desktop mockups of the DevFest Toulouse 2026 site, exported from Figma as SVG and migrated from `Site-Devfest-Toulouse-2026/docs/maquettes/`.
 
-## Target content
+> 💡 The `home.svg` file is heavy (~29 MB) because it embeds raster PNG illustrations directly. A future optimization is to swap embedded PNGs for `<image>` references to [`../assets/illustrations/`](../assets/illustrations/) (which would shrink it to a few hundred KB).
+
+## Content
 
 Site DevFest Toulouse 2026 — desktop mockups (1440 px), exported as SVG from Figma.
 
@@ -29,13 +31,6 @@ Site DevFest Toulouse 2026 — desktop mockups (1440 px), exported as SVG from F
 
 - Figma file: [DevFestToulouse-2025](https://www.figma.com/design/5dw9ggMfrdFrB9qEKYvHH6/DevFestToulouse-2025?node-id=22-499)
 - Site spec (FR): [`../../Site-Devfest-Toulouse-2026/docs/maquettes-figma.md`](../../Site-Devfest-Toulouse-2026/docs/maquettes-figma.md)
-
-## Copying from the existing site
-
-```bash
-# From this repo's root, PowerShell:
-robocopy ..\Site-Devfest-Toulouse-2026\docs\maquettes examples\site-2026 *.svg
-```
 
 ## Why this matters for AI agents
 

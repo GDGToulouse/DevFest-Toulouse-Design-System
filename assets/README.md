@@ -4,9 +4,9 @@ Brand binaries — the canonical location. Consumer apps reference this folder; 
 
 ## Status
 
-🚧 **Empty for now.** Files are to be copied from the existing site repo `../../Site-Devfest-Toulouse-2026/docs/assets/`.
+✅ **Populated** with files migrated from `Site-Devfest-Toulouse-2026/docs/assets/` and `Site-Devfest-Toulouse-2026/docs/CharteGraphique_Devfest2024.pdf`.
 
-## Target structure
+## Structure
 
 ```
 assets/
@@ -25,11 +25,10 @@ assets/
 │   ├── Bismarck/                    ← 30 PNG (#B94420)
 │   ├── TerreCuite/                  ← 30 PNG (#EC6839)
 │   └── Malachite/                   ← 30 PNG (#109E6E)
-└── fonts/
-    ├── GoogleSans-Regular.woff2
-    ├── GoogleSans-Bold.woff2
-    └── GoogleSans-Italic.woff2
+└── fonts/                          ← To be added (Google Sans woff2)
 ```
+
+> ⚠️ **Fonts directory is not yet present.** Google Sans is loaded via the [Google Fonts CDN](https://fonts.google.com/specimen/Google+Sans) for now. Self-hosted `.woff2` files will be added when needed (see [`../brand/typography.md`](../brand/typography.md)).
 
 ## Logo declensions
 
@@ -47,16 +46,9 @@ assets/
 
 **CCSignLanguage** is print/social only — its files are not bundled here.
 
-## Copying assets from the existing site
+## Migration note
 
-Until the canonical migration is done, the source-of-truth files live in `../../Site-Devfest-Toulouse-2026/docs/assets/`. To populate this folder, copy from there:
-
-```bash
-# From this repo's root, on Windows (PowerShell):
-robocopy ..\Site-Devfest-Toulouse-2026\docs\assets assets /E /XD .git
-```
-
-After copying, update this README to remove the "🚧 Empty for now" warning and check in the binaries.
+Files were migrated from `Site-Devfest-Toulouse-2026/docs/assets/` (logo + illustrations) and `Site-Devfest-Toulouse-2026/docs/CharteGraphique_Devfest2024.pdf` (charte). The site repo's `docs/assets/` will be updated to reference this folder instead of duplicating binaries.
 
 ## Licence
 
