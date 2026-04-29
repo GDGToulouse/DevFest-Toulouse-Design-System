@@ -11,27 +11,27 @@ Per-component specifications. Each component gets its own markdown file with:
 
 ## Status
 
-🚧 **Squelette en place. Spécifications par composant à rédiger.**
+🟢 **P0 components specified.** P1 / P2 components still to be written.
 
 ## Components à documenter
 
 Liste issue des maquettes du site DevFest Toulouse 2026. À transformer en fichiers `<name>.md` dans ce dossier au fur et à mesure.
 
-| Composant | Priorité | Fichier cible |
-|-----------|----------|---------------|
-| Button (Primary / Secondary, Small / Large) | P0 | `button.md` |
-| Header | P0 | `header.md` |
-| Footer | P0 | `footer.md` |
-| Article Card (300×400 px) | P0 | `card-article.md` |
-| Partner Card Platinum (340×481 px) | P1 | `card-partner-platinum.md` |
-| Partner Card Gold/Other (340×240 px) | P1 | `card-partner-gold.md` |
-| Hero Section | P1 | `hero.md` |
-| Statistics Block | P1 | `stat-block.md` |
-| Breadcrumb | P2 | `breadcrumb.md` |
-| Form Inputs (text, select, textarea, label) | P2 | `form-inputs.md` |
-| Socials | P2 | `socials.md` |
-| Speaker Card | P2 | `card-speaker.md` |
-| Session Card | P2 | `card-session.md` |
+| Composant | Priorité | Fichier | Status |
+|-----------|----------|---------|--------|
+| Button (Primary / Secondary, Small / Large) | P0 | [`button.md`](button.md) | ✅ |
+| Header | P0 | [`header.md`](header.md) | ✅ |
+| Footer | P0 | [`footer.md`](footer.md) | ✅ |
+| Article Card (300×400 px) | P0 | [`card-article.md`](card-article.md) | ✅ |
+| Partner Card Platinum (340×481 px) | P1 | `card-partner-platinum.md` | ⏳ |
+| Partner Card Gold/Other (340×240 px) | P1 | `card-partner-gold.md` | ⏳ |
+| Hero Section | P1 | `hero.md` | ⏳ |
+| Statistics Block | P1 | `stat-block.md` | ⏳ |
+| Breadcrumb | P2 | `breadcrumb.md` | ⏳ |
+| Form Inputs (text, select, textarea, label) | P2 | `form-inputs.md` | ⏳ |
+| Socials | P2 | `socials.md` | ⏳ |
+| Speaker Card | P2 | `card-speaker.md` | ⏳ |
+| Session Card | P2 | `card-session.md` | ⏳ |
 
 ## Source visuelle
 
