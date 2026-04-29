@@ -11,3 +11,6 @@ Thumbs.db
 
 # Claude Code local settings (per-user permissions, not shared)
 .claude/settings.local.json
+
+# macOS AppleDouble metadata files (resource forks)
+._*
